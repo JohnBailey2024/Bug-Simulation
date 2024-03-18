@@ -1,22 +1,35 @@
-# Bug-Simulation
-this is a simple predator-prey simulation game implemented in C++
+# Predator-Prey Simulation Game (Ants vs Doodlebugs)
 
-in this game, the prey are ants and the predators are doodlebugs. they live in 20x20 grid of cells where only one critter may occupy a cell at a time and a critter is not allowed to move off the edges of the world. time is simulated in time steps and each critter performs action each time step.
+This is a simple simulation game implemented in C++ where the prey are represented by ants ('o') and the predators by doodlebugs ('X'). The critters live in a 20x20 grid of cells where only one critter may occupy a cell at a time, and they are not allowed to move off the edges of the world. Time is simulated in discrete time steps, and each critter performs actions during each time step.
 
-ants' actions at each time step is described as follows:
+Critters' Actions
+Ants:
 
-move - at each time step, a random move is generated to: up, down, right or left. if the neighboring cell in the selected direction is occupied or it would move off the grid, the any stays in the current cell.
-breed - if an ant survives three time steps, then after it moves, the ant breeds. this is simulated by creating a new ant in an adjacent cell (up, down, right or left) that is empty. if there is no empty cell available, then the ant breeds when an empty cell becomes available at a subsequent time step.
-doodlebugs' action at each time step is described as follows:
+Move: At each time step, a random move is generated: up, down, right, or left. If the neighboring cell in the selected direction is occupied or it would move off the grid, the ant stays in the current cell.
+Breed: If an ant survives three time steps, it breeds. This is simulated by creating a new ant in an adjacent empty cell (up, down, right, or left). If no empty cell is available, breeding occurs when an empty cell becomes available in subsequent time steps.
+Doodlebugs:
 
-move - at each time step, if there is an adjacent (up, down, right or left) ant, then a doodlebug randomly chooses which ant to eat by moving to the cell containing that ant. if there is no ant available to eat in an adjacent cell, then the doodlebug moves in the same manner as an ant.
-breed - if a doodlebug survives for eight time steps, then after it moves, it breeds in the same manner as an ant
-starve - if a doodlebug has not eaten an ant within last three time steps, then at the end of the time step (after it moved and bred) it starves and dies. this is simulated by the doodlebug being removed from the grid of cells
-at each time step, doodlebugs move first and then ants move. doodlebugs and ants breed at the same time. and at the end of each time step, some doodlebugs may starve. priority of each action is given to earlier cell in the grid; if a cell in a grid can be represented as grid[row][col], then a cell c1 (grid[row1][col1]) is earlier than a cell c2 (grid[row2][col2]) if row1 < row2 or row1 = row2 and col1 < col2
+Move: At each time step, if there is an adjacent ant, the doodlebug moves to the cell containing that ant. If no ant is available to eat in an adjacent cell, the doodlebug moves randomly like an ant.
+Breed: If a doodlebug survives for eight time steps, it breeds by creating a new doodlebug in an adjacent empty cell (up, down, right, or left).
+Starve: If a doodlebug has not eaten an ant within the last three time steps, it starves and dies.
+Simulation Flow
+Doodlebugs move first, followed by ants.
+Doodlebugs and ants breed at the same time.
+At the end of each time step, some doodlebugs may starve and die.
+Game Initialization
+The world is initialized with 5 doodlebugs and 100 ants.
+The user must press enter to initiate a time step.
+Representation of Grid State
+Ant: 'o'
+Doodlebug: 'X'
+Empty cell: '-'
+Priority of Actions
+Priority is given to earlier cells in the grid. If a cell c1 (grid[row1][col1]) is earlier than a cell c2 (grid[row2][col2]), then c1 is processed before c2. This is determined by comparing the row and column indices of the cells.
+Running the Simulation
+To run the simulation:
 
-at each time step, the state of the grid is printed as follows:
-
-an ant is represented by 'o'
-a doodlebug is represented by 'X'
-an empty cell is represented by '-'
-the world is initialized with 5 doodlebugs and 100 ants. the user must press enter to initiate a time step
+Compile the C++ program.
+Execute the compiled program.
+Press enter to initiate each time step.
+Observe the grid state printed after each time step to see the movement and actions of ants and doodlebugs.
+Enjoy simulating the interactions between ants and doodlebugs in this predator-prey world!
