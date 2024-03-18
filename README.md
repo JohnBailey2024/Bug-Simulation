@@ -1,6 +1,6 @@
 # Predator-Prey Simulation Game (Ants vs Doodlebugs)
 
-This is a simple simulation game implemented in C++ where the prey are represented by ants ('o') and the predators by doodlebugs ('X'). The critters live in a 20x20 grid of cells where only one critter may occupy a cell at a time, and they are not allowed to move off the edges of the world. Time is simulated in discrete time steps, and each critter performs actions during each time step.
+This is a simple simulation game implemented in C++ where the prey are represented by ants ('O') and the predators by doodlebugs ('X'). The critters live in a 20x20 grid of cells where only one critter may occupy a cell at a time, and they are not allowed to move off the edges of the world. Time is simulated in discrete time steps, and each critter performs actions during each time step.
 
 ## Critters' Actions
 ### Ants:
@@ -25,7 +25,7 @@ At the end of each time step, some doodlebugs may starve and die.
 The world is initialized with 5 doodlebugs and 100 ants.
 The user must press enter to initiate a time step.
 Representation of Grid State
-Ant: 'o'
+Ant: 'O'
 Doodlebug: 'X'
 Empty cell: '.'
 
