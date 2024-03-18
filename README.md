@@ -27,7 +27,7 @@ The user must press enter to initiate a time step.
 Representation of Grid State
 Ant: 'o'
 Doodlebug: 'X'
-Empty cell: '-'
+Empty cell: '.'
 
 ## Compile the C++ program.
 Execute the compiled program.
