@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-const int worldsize = 2;
-const int initialAnts = 2;
-const int initialDoodles = 1;
+const int worldsize = 20;
+const int initialAnts = 100;
+const int initialDoodles = 5;
 const int Doodle = 1;
 const int Antt = 2;
 const int breedAnt = 3;
